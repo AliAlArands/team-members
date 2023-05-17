@@ -1,0 +1,49 @@
+.list-of-cards {
+  width: 55%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0;
+}
+
+.select {
+  border-bottom: 1px solid rgb(231, 221, 221);
+}
+
+.card-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  border: 3px solid whitesmoke !important;
+  transition: all 0.3s linear;
+}
+.bold-card {
+  border: 3px solid black !important;
+}
+
+.link {
+  color: gray;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  transition: all 0.3s linear;
+
+}
+
+.link:hover {
+  color: black;
+}
+
+.team-name {
+  color: gray !important;
+  transition: all 0.4s linear;
+  font-weight: bold !important;
+}
+
+.team-name:hover {
+  color: black !important;
+}
