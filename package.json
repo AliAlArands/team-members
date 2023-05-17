@@ -1,7 +1,7 @@
 {
     "name": "teammembers",
     "private": true,
-    "homepage": "https://alialarands.github.io/react-projects",
+    "homepage": "https://alialarands.github.io/team-members",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
