@@ -6,12 +6,7 @@ import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 
-import {
-  BrowserRouter,
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Teams from "./components/Teams.jsx";
 
@@ -106,29 +101,29 @@ const AppWrapper = () => {
     ]
   );
 
-  const router = createBrowserRouter({
-    path: "/",
-    element: <App selectedTeam={selectedTeam} employees={employees} />,
-    children: [
-      {
-        index: true,
-        element: (
-          <Home
-            selectedTeam={selectedTeam}
-            employees={employees}
-            setEmployees={setEmployees}
-            setSelectedTeam={setSelectedTeam}
-          />
-        ),
-      },
-      {
-        path: "teams",
-        element: (
-          <Teams setSelectedTeam={setSelectedTeam} employees={employees} />
-        ),
-      },
-    ],
-  });
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <App selectedTeam={selectedTeam} employees={employees} />,
+      children: [
+        {
+          index: true,
+          element: (
+            <Home
+              selectedTeam={selectedTeam}
+              employees={employees}
+              setEmployees={setEmployees}
+              setSelectedTeam={setSelectedTeam}
+            />
+          ),
+        },
+        {
+          path: "teams",
+          element: <Teams  setSelectedTeam={setSelectedTeam}  employees={employees} />,
+        },
+      ],
+    },
+  ]);
   return (
     <React.StrictMode>
       <RouterProvider router={router} />
@@ -136,8 +131,7 @@ const AppWrapper = () => {
   );
 };
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <AppWrapper />
-  </BrowserRouter>
+  <AppWrapper/>
 );
